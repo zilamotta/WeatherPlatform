@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tokyo Weather</title>
+    <style>
+      h1 {
+        text-align: center;
+        font-family: Helvetica, Arial, sans-serif;
+        line-height: 48px;
+      }
+      h2 {
+        text-align: center;
+        color: #1a64d6;
+        font-size: 34px;
+        line-height: 48px;
+        margin: 0;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+      p {
+        text-align: center;
+        margin: 0;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 34px;
+        line-height: 48px;
+      }
+      .weather-page {
+        list-style: none;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 10px;
+        transition: all 200ms ease-in-out;
+        max-width: 400px;
+        margin: 0 auto;
+        font-family: monospace;
+      }
+      li:hover {
+        display: block;
+        transition: all 300ms ease-in-out;
+        border: #fbecc7;
+        border-radius: 13px;
+        background-color: #fbecc7;
+      }
+      .link-tomorrow {
+        display: block;
+        font-size: 1.17em;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        unicode-bidi: isolate;
+        color: black;
+        padding: 10px 0;
+        border-radius: 10px;
+        transition: all 200ms ease-in-out;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .link-saturday {
+        display: block;
+        font-size: 1.17em;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        unicode-bidi: isolate;
+        color: black;
+        padding: 10px 0;
+        border-radius: 10px;
+        transition: all 200ms ease-in-out;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .link-sunday {
+        display: block;
+        font-size: 1.17em;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        unicode-bidi: isolate;
+        color: black;
+        padding: 10px 0;
+        border-radius: 10px;
+        transition: all 200ms ease-in-out;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .time-first {
+        display: block;
+        color: #8f96a3;
+        display: block;
+        font-size: 1.17em;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        unicode-bidi: isolate;
+      }
+      .time-second {
+        display: block;
+        color: #8f96a3;
+        display: block;
+        font-size: 1.17em;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        unicode-bidi: isolate;
+      }
+      .time-third {
+        display: block;
+        color: #8f96a3;
+        display: block;
+        font-size: 1.17em;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        unicode-bidi: isolate;
+      }
+      button {
+        font-size: 16px;
+        display: block;
+        border-radius: 30px;
+        border-color: #1a64d6;
+        margin: 20px auto;
+        margin-bottom: 2em;
+        padding: 16px 24px;
+        color: whitesmoke;
+        background: #1a64d6;
+        transition: all 200ms ease;
+      }
+      button:hover {
+        color: #1a64d6;
+        cursor: pointer;
+        box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+        background-color: aliceblue;
+      }
+      .end {
+        font-size: 18px;
+        opacity: 0.7;
+        text-align: center;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🌤</h1>
+    <h2>Currently 21° in Tokyo</h2>
+    <p>13° / <strong>23°</strong></p>
+    <ul class="weather-page">
+      <li class="link-tomorrow">
+        <strong>🌧 Tomorrow</strong>
+        <div class="time-first">10° / <strong>22°</strong></div>
+      </li>
+      <li class="link-saturday">
+        <strong>🌥 Saturday</strong>
+        <div class="time-second">15° / <strong>17°</strong></div>
+      </li>
+      <li class="link-sunday">
+        <strong>🌤 Sunday</strong>
+        <div class="time-third">25° / <strong>28°</strong></div>
+      </li>
+    </ul>
+    <button>Change City</button>
+    <p class="end">Code by: Zilá Motta</p>
+   <script>
+  function greetTemperature() {
+    let city = prompt("What city do you live in?");
+    let temperature = prompt("What temperature is it?");
+
+    let h2 = document.querySelector("h2");
+    h2.innerHTML = "Currently " + temperature + "° in " + city;
+
+    let h1 = document.querySelector("h1");
+    if (temperature >= 18) {
+      h1.innerHTML = "😀";
+    } else {
+      h1.innerHTML = "🥲";
+    }
+  }
+
+  let cityButton = document.querySelector("button");
+  cityButton.addEventListener("click", greetTemperature);
+</script>
+
+  </body>
+</html>
